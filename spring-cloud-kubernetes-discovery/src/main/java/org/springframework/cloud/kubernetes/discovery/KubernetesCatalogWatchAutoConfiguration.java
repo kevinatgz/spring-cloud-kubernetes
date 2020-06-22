@@ -42,9 +42,8 @@ public class KubernetesCatalogWatchAutoConfiguration {
 	@ConditionalOnProperty(
 			name = "spring.cloud.kubernetes.discovery.catalog-services-watch.enabled",
 			matchIfMissing = true)
-	public KubernetesCatalogWatch kubernetesCatalogWatch(KubernetesClient client,
-			KubernetesDiscoveryProperties properties) {
-		return new KubernetesCatalogWatch(client, properties);
+	public KubernetesCatalogWatch kubernetesCatalogWatch(KubernetesClient client) {
+		return new KubernetesCatalogWatch(client);
 	}
 
 }
